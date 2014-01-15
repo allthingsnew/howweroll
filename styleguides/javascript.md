@@ -32,7 +32,7 @@ Bad:
 
 Good:
 
-    function(){
+    function () {
 
 Always wrap blocks to the next line and always use curly braces.
 
