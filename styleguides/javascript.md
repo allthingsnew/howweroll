@@ -21,9 +21,15 @@ Filenames use `lower-case-hyphen-css-case`.
 
 Constants use `ALL_CAPS_UNDERSCORE_CASE`.
 
+All names should specify what they signify. Short, one-letter variables or
+nonsense named functions are a no no.
+
 ## Curly Braces
 
 Place them on the same line as the thing that necessitates them.
+
+An `else`, `elseif`, `catch` statement belongs on the same line as
+the preceeding `}`.
 
 Bad:
 
@@ -70,16 +76,18 @@ at the beginning of the line (NPM style).
 
 ## Whitespace
 
-Place a single space before `(` other than function calls. Use a single space
-when needed to make things more readable.
+Place a single space before `(` and after `)` other than function calls.
+Use a single space when needed to make things more readable.
 
 Never leave trailing whitespace or whitespace on empty lines.
 
 ## Var Statements
 
-Use one `var` per context block.
+Use one `var` per context block at the top.
 
 Separate out declarations, one per line.
+
+Every variable must be declared in a `var` statement.
 
 Bad:
 
@@ -98,9 +106,41 @@ Good:
 Always prefer single-quotes over double-quotes unless you need to escape
 a single quote in the string.
 
+Do not escape newlines with `\` when setting long strings. Use concatenation
+instead.
+
+Good:
+
+    var longString = 'Lorem ipsum Consectetur dolor culpa cupidatat in '
+                   + 'dolor labore eu nisi qui consectetur Ut veniam '
+                   + 'tempor sint dolor eu esse cillum fugiat officia '
+                   + 'reprehenderit ex enim cupidatat nostrud in aliqua.'
+
 ## Functions
 
 Prefer named functions over anonymous. (This is better for stack tracing.)
+
+Within proceedural blocks assign anonymous functions to variables instead
+of declaring functions by name.
+
+Good:
+
+    function aFunctionName (arg1, arg2, arg3) {
+      var someOtherVar = arg1 + arg2
+        , toUseLater
+
+      function adHocFunc (piece) {
+        return '' + piece
+      }
+
+      if (arg1 === 'hello') {
+        toUseLater = function () {
+          return 'hello'
+        }
+      }
+
+      return arg1 + adHocFunc(piece) + arg3
+    }
 
 ## Returned Values
 
@@ -110,9 +150,34 @@ Use `null` for values that are removed.
 
 Never set something to `undefined`, only test for it as something not yet set.
 
-## Comparison Operators
+## Operators
 
 Always use `===` and `!==`.
+
+Place a single-space before and after assignment, logical, mathematical, and
+bitwise operators.
+
+Do not leave operators hanging on the end of lines. If an expression spans
+multiple lines wrap the operator to the beginning of the next line. (This
+especially includes the object `.` operator.)
+
+Bad:
+
+    var a = b+2*3
+      , c = dog|cat
+
+    if (a||c) {
+      doSomething()
+    }
+
+Good:
+
+    var a = b + 2 * 3
+      , c = dog | cat
+
+    if (a || c) {
+      doSomething()
+    }
 
 ## Comments & Documentation
 
@@ -122,3 +187,11 @@ Comment often for inline documentation. Place a Header 1 at the top of every
 file with the module/class name and a Header 3 with a brief description of what
 it does.
 
+## Linting (Hinting)
+
+Always JSHint your code. We use a Grunt task to do this for us but it's a good
+idea to have some sort of Linter enabled on your editory of choice.
+
+## Danger Zones
+
+Don't use `with` or `eval`, ever.
