@@ -75,6 +75,29 @@ when needed to make things more readable.
 
 Never leave trailing whitespace or whitespace on empty lines.
 
+## Var Statements
+
+Use one `var` per context block.
+
+Separate out declarations, one per line.
+
+Bad:
+
+    var someVar = require('./something')
+      , another, andAnother, oneMore = []
+
+Good:
+
+    var someVar = require('./something')
+      , another
+      , andAnother
+      , oneMore = []
+
+## Strings
+
+Always prefer single-quotes over double-quotes unless you need to escape
+a single quote in the string.
+
 ## Functions
 
 Prefer named functions over anonymous. (This is better for stack tracing.)
@@ -86,3 +109,16 @@ Truthy values should always be specified as either `true` or `false`.
 Use `null` for values that are removed.
 
 Never set something to `undefined`, only test for it as something not yet set.
+
+## Comparison Operators
+
+Always use `===` and `!==`.
+
+## Comments & Documentation
+
+Comment only with `//`.
+
+Comment often for inline documentation. Place a Header 1 at the top of every
+file with the module/class name and a Header 3 with a brief description of what
+it does.
+
