@@ -55,7 +55,38 @@ Good:
 
 ## Semicolons
 
-Don't use them except in these situation:
+Don't use them except for:
+
+* Where they are required like `for (;;)`
+* In front of a line beginning with a `(` or `[`
+
+Bad:
+
+    Foo.doSomething();
+    (function(){
+      myLoop:for (var i = 0, len = list.length; i < len; ++i) {
+        Bar.compile(list[i]);
+        if (i === 3) {
+          break myLoop;
+        }
+      }
+    })();
+
+Good:
+
+    Foo.doSomething()
+    ;(function(){
+      myLoop:for (var i = 0, len = list.length; i < len; ++i) {
+        Bar.compile(list[i]);
+        if (i === 3) {
+          break myLoop;
+        }
+      }
+    })()
+
+Generally if you are in a position to need a semicolon prepending a line of code
+in any other situation (starting with a `+`, `-`, `/`, etc.) then you probably need
+to rework your code!
 
 ## Comma First
 
