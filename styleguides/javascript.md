@@ -223,7 +223,7 @@ Good:
 
 Comment only with `//`.
 
-Comment often for inline documentation. Place a Header 1 at the top of every
+Comment often for inline documentation. Place a Header 1 (in Markup) at the top of every
 file with the module/class name and a Header 3 with a brief description of what
 it does.
 
