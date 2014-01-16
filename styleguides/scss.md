@@ -8,6 +8,15 @@ Use four-space indentation.
 
 Never leave trailing whitespace or whitespace on empty lines.
 
+## Documentation & Commenting
+
+Always use `//` commenting style instead of css comments `/* */`.
+
+Every file must have a header 1 at the top naming the file followed by a header 3
+with a brief description of the file's contents.
+
+Comments generate docs so be sure to mark off sections with appropriate headers.
+
 ## Blocks
 
 Use a single space before `{` in rule blocks and place it on the same line as
@@ -24,6 +33,9 @@ Use a single space after `:` in declarations.
 Units should not be used with a `0` (`padding: 0;`).
 
 Lead decimals with a `0` (`opactiy: 0.3;`).
+
+Keep properties and values in lowercase and short if possible. Prefer shorthand
+for hex values.
 
 Prefer `em` when font size in relative to a component's context, `rem` when
 setting fixed font sizes. Don't use units with `line-height`.
@@ -67,10 +79,6 @@ Never specify tags with id selectors (`ul#my-list`).
 Place a single empty line between nested declarations.
 
 Order your nesting blocks in the general order of your HTML structure.
-
-## Comments
-
-Always use `//` commenting style instead of css comments `/* */`.
 
 ## Nomenclature
 
