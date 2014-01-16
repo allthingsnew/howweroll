@@ -79,7 +79,7 @@ Good:
       myLoop:for (var i = 0, len = list.length; i < len; ++i) {
         Bar.compile(list[i]);
         if (i === 3) {
-          break myLoop;
+          break myLoop
         }
       }
     })()
