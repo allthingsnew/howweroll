@@ -25,6 +25,9 @@ Units should not be used with a `0` (`padding: 0;`).
 
 Lead decimals with a `0` (`opactiy: 0.3;`).
 
+Prefer `em` when font size in relative to a component's context, `rem` when
+setting fixed font sizes. Don't use units with `line-height`.
+
 Stack properties like the box model with outer properties nearer the top and inner
 or inessential properties nearer the bottom. Place `display` at the top.
 
