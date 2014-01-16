@@ -116,6 +116,11 @@ Use a single space when needed to make things more readable.
 
 Never leave trailing whitespace or whitespace on empty lines.
 
+Segment your code into logical groups with single-empty lines. Be generous with
+breaking up code but no need to separate out each line on its own.
+
+Don't add an empty line at the top or bottom of each block.
+
 ## Var Statements
 
 Use one `var` per context block at the top.
