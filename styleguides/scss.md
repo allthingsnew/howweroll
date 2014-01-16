@@ -91,7 +91,7 @@ should contain the following:
 
 1. UI Module
 1. Function of Module
-1. *(optional)* Interative State
+1. Interative State *(optional)*
 
 Examples:
 
