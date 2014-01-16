@@ -12,7 +12,7 @@ Never leave trailing whitespace or whitespace on empty lines.
 
 All HTML must pass the WC3 Validator.
 
-Warning are OK.
+Warnings are OK.
 
 ## Doctype
 
@@ -75,4 +75,8 @@ for pull-out content, and `<article>` for modular, repeatable markup.
 
 Do not use `<section>` in place of `<div>`. Use them only for major sections
 of modular layout.
+
+## Scripts
+
+If at all possible, keep scripts external to HTML markup.
 
