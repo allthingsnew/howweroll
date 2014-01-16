@@ -106,4 +106,5 @@ Use shorthand for things that are easily recognizable like `bg`, `bd`, and `btn`
 
 Prefer font icons over images and prefer `png` over other types of images.
 
-All images must have a high-def version (2x).
+All images must have a high-def version (2x). The exception is images that are
+already scaled down to fit their container.
