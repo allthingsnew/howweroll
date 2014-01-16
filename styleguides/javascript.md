@@ -121,7 +121,7 @@ breaking up code but no need to separate out each line on its own.
 
 Don't add an empty line at the top or bottom of each block.
 
-## Var Statements
+## Var
 
 Use one `var` per context block at the top.
 
