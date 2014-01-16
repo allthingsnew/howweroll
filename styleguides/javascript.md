@@ -198,7 +198,7 @@ Never set something to `undefined`, only test for it as something not yet set.
 Always use `===` and `!==`.
 
 Place a single-space before and after assignment, logical, mathematical, and
-bitwise operators.
+bitwise operators (except `!`).
 
 Do not leave operators hanging on the end of lines. If an expression spans
 multiple lines wrap the operator to the beginning of the next line. (This
