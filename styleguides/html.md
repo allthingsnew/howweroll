@@ -80,3 +80,7 @@ of modular layout.
 
 If at all possible, keep scripts external to HTML markup.
 
+## Comments
+
+Avoid them in favor of template comments.
+
