@@ -10,17 +10,44 @@ Never leave trailing whitespace or whitespace on empty lines.
 
 ## Blocks
 
-Use a single space before `{` in rule blocks.
+Use a single space before `{` in rule blocks and place it on the same line as
+the last selector.
+
+Prefer to keep selectors on the same line.
 
 Use a single space before and after modifiers like `+`, `>`, and `~`.
 
-## Properties
+## Properties & Values
 
 Use a single space after `:` in declarations.
 
 Units should not be used with a `0` (`padding: 0;`).
 
 Lead decimals with a `0` (`opactiy: 0.3;`).
+
+Stack properties like the box model with outer properties nearer the top and inner
+or inessential properties nearer the bottom. Place `display` at the top.
+
+Example:
+
+    .styleguide {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      float: left;
+      clear: both;
+      margin: 0;
+      width: 300rem;
+      height: 200rem;
+      border: 1px solid #0f0;
+      padding: 0;
+      font: 1.5em helvetica, sans-serif;
+      line-height: 2;
+      color: #c00;
+      background: rgba(0, 0, 0, 0.5);
+    }
 
 ## Nesting
 
