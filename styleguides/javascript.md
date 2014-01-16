@@ -94,20 +94,23 @@ to rework your code!
 
 ## Comma First
 
-In lists separated by commas that wrap to new lines place the commas
-at the beginning of the line (NPM style).
+In comma-separated lists that wrap to new lines place the commas
+at the beginning of the line (like NPM). Align the closing brace or bracket with
+the parent name. The listed set is indented once.
 
     var someVar = require('someModule')
       , another = require('another')
       , oneMore = require('yetAnotherThing')
-      , arrays = [ "one"
-                 , "two"
-                 , "three"
-                 ]
-      , objects = { "one" : 1
-                  , "two": 2
-                  , "three": 3
-                  }
+      , arrays = [
+            "one"
+          , "two"
+          , "three"
+        ]
+      , objects = {
+            "one" : 1
+          , "two": 2
+          , "three": 3
+        }
 
 ## Whitespace
 
