@@ -227,6 +227,16 @@ Comment often for inline documentation. Place a Header 1 at the top of every
 file with the module/class name and a Header 3 with a brief description of what
 it does.
 
+## CommonJS
+
+Use `require` statements at the top of the file or any block that necessitates
+them.
+
+Use `module.exports` at the bottom of the file.
+
+Group `require`, `module.exports`, and `exports` statements together. This makes
+it easy to see at first glance what a file is requiring and exporting.
+
 ## Linting (Hinting)
 
 Always JSHint your code. We use a Grunt task to do this for us but it's a good
