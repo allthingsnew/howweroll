@@ -235,8 +235,6 @@ it does.
 Use `require` statements at the top of the file or any block that necessitates
 them.
 
-Use `module.exports` at the bottom of the file.
-
 Group `require`, `module.exports`, and `exports` statements together. This makes
 it easy to see at first glance what a file is requiring and exporting.
 
