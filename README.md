@@ -18,4 +18,4 @@ Guidelines and standards for workflow and processes.
 
 | **Type** | **Style Guide** |
 | :--: | :---------: |
-| GIT | [GIT Style Guide](styleguides/git.md)**  |
+| GIT | [GIT Style Guide](styleguides/git.md)  |
