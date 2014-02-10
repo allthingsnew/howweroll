@@ -46,7 +46,7 @@ Incorporate upstream changes regularly.
     git fetch origin
     git rebase -i origin/master
 
-When finished with your feature and tested, merge into master.
+When finished with your feature and tested, merge into master. View lastest commits and what files have been changed, making sure that no merge conflicts will arise.
 
     git log origin/master..feature-my-feature
     git diff --stat origin/master
