@@ -1,4 +1,4 @@
-# Javascript Coding Style
+# Javascript Style Guide
 
 ## Line Length
 

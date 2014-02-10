@@ -1,4 +1,4 @@
-# HTML Formatting Guide
+# HTML Style Guide
 
 ## Indentation
 

@@ -1,4 +1,4 @@
-# Git
+# Git Style Guide
 
 Following are our Git conventions that should be followed. We like clean, cohesive,
 and consistent history.

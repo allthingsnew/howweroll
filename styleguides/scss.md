@@ -1,4 +1,4 @@
-# SCSS Styles
+# SCSS Style Guide
 
 ## Indentation
 
