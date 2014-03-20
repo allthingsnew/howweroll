@@ -54,7 +54,7 @@ Incorporate upstream changes regularly.
     git flow feature checkout foo
     git flow feature rebase
 
-When finished with your feature and tested, make sure your up to date with upstream changes
+When finished with your feature and tested, make sure you're up to date with upstream changes
 on master, squash commits into as small pieces as possible, and close out the feature.
 
 	# On feature foo branch
