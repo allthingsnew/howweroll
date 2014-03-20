@@ -32,29 +32,33 @@ Here's a good sample commit message:
 
 (Notice the use of #29 in the message. Github sees this and will actually close issue #29 for you and reference the issue via link.)
 
-## Features
+## Git Flow
 
-Work on new features in separate branches.
+The branch model known as GitFlow keeps everything working correctly by separating out different development timelines into topic branches. Install GitFlow useing Homebrew:
 
-    git checkout master
-    git pull --rebase
-    git checkout -b feature-my-feature
-    git push -u origin feature-my-feature
+	# We use the AVH edition because its maintainer is active.
+    brew install git-flow-avh
+
+Work on new features only in their respective branches:
+
+    git flow feature start foo
+
+    # make some changes relevent to only this feature
+    git add .
+    git commit
 
 Incorporate upstream changes regularly.
 
-    git fetch origin
-    git rebase -i origin/master
+	git checkout master
+    git pull --rebase
+    git flow feature checkout foo
+    git flow feature rebase
 
-When finished with your feature and tested, merge into master. View lastest commits and what files have been changed, making sure that no merge conflicts will arise.
+When finished with your feature and tested, make sure your up to date with upstream changes
+on master, squash commits into as small pieces as possible, and close out the feature.
 
-    git log origin/master..feature-my-feature
-    git diff --stat origin/master
-    git checkout master
-    git merge feature-my-feature --ff-only
+	# On feature foo branch
+    git rebase -i
+    git flow feature finish
+    # Then push your changes
     git push
-
-Then clean up your feature branches.
-
-    git push origin --delete feature-my-feature
-    git branch -d feature-my-feature
