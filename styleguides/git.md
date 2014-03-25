@@ -51,7 +51,7 @@ Incorporate upstream changes regularly.
 
 	git checkout master
     git pull --rebase
-    git flow feature checkout foo
+    git checkout -
     git flow feature rebase
 
 When finished with your feature and tested, make sure you're up to date with upstream changes
