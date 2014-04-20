@@ -11,6 +11,7 @@ Coding conventions, nomenclature, formatting and best practices.
 | HTML | [HTML Style Guide](styleguides/html.md)  |
 | CSS  | [CSS Style Guide](styleguides/scss.md) |
 | JavaScript | [JavaScript Style Guides](styleguides/javascript.md) |
+| AngularJS | [AngularJS Style Guide](https://github.com/mgechev/angularjs-style-guide) |
 
 ## Our Process Style Guides
 
