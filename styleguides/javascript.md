@@ -2,7 +2,7 @@
 
 ## Line Length
 
-Keep lines shorter than 80 characters.  It's better for lines to be
+Keep lines shorter than 90 characters.  It's better for lines to be
 too short than to be too long.  Break up long lists, objects, and other
 statements onto multiple lines.
 
@@ -20,6 +20,8 @@ Class names use `UpperCaseCamelStyle`.
 Filenames use `lower-case-hyphen-css-case`.
 
 Constants use `ALL_CAPS_UNDERSCORE_CASE`.
+
+Variables storing a promise are appended with a `P`.
 
 All names should specify what they signify. Short, one-letter variables or
 nonsense named functions are a no no.
@@ -40,15 +42,17 @@ Good:
 
     function () {
 
-Always wrap blocks to the next line and always use curly braces.
+Wrap blocks to the next line if they are complex (more than 1 line). And always use curly braces if wrapping to a new line.
 
 Bad:
 
-    if (foo) bar()
     if (foo) { bar() }
+    if (foo)
+        bar()
 
 Good:
 
+    if (foo) bar()
     if (foo) {
       bar()
     }
@@ -126,7 +130,7 @@ Don't add an empty line at the top or bottom of each block.
 
 ## Var
 
-Use one `var` per context block at the top.
+Using one `var` per context block at the top is recommended. Otherwise place `var` declarations as close to their use as possible.
 
 Separate out declarations, one per line.
 
