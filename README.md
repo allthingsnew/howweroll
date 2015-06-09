@@ -6,17 +6,8 @@ Helpful documents & guides for how to do what we do.
 
 Coding conventions, nomenclature, formatting and best practices.
 
-| **Type** | **Style Guide** |
-| :--: | :---------: |
-| HTML | [HTML Style Guide](styleguides/html.md)  |
-| CSS  | [CSS Style Guide](styleguides/scss.md) |
-| JavaScript | [JavaScript Style Guides](styleguides/javascript.md) |
-| AngularJS | [AngularJS Style Guide](https://github.com/mgechev/angularjs-style-guide) |
-
-## Our Process Style Guides
-
-Guidelines and standards for workflow and processes.
-
-| **Type** | **Style Guide** |
-| :--: | :---------: |
-| GIT | [GIT Style Guide](styleguides/git.md)  |
+* [GIT](styleguides/git.md)
+* [HTML](styleguides/html.md)
+* [CSS/LESS](styleguides/less.md)
+* [JavaScript](styleguides/javascript.md)
+  * [AngularJS](https://github.com/mgechev/angularjs-style-guide)
