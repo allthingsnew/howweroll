@@ -1,37 +1,27 @@
-# HTML Style Guide
+# HTML
 
-## Indentation
+This style guide is concerned with HTML but also includes Angular-flavored
+HTML. In particular, Angular attributes can load up an HTML tag.
 
-Use four-space indentation.
+## Quick Points
 
-## Whitespace
-
-Never leave trailing whitespace or whitespace on empty lines.
-
-## Validation
-
-All HTML must pass the WC3 Validator.
-
-Warnings are OK.
-
-## Doctype
-
-Always use the HTML5 Doctype.
-
-    <!DOCTYPE html>
+* Use four-space indentation.
+* Never leave trailing whitespace.
+* Always use HTML5.
 
 ## Head
 
-Asset links like stylesheets, icons, RSS, etc. should reside in the head.
+Asset links like stylesheets and icons that are needed on page set up should reside in the head.
 
-Like-tags should be grouped together. Don't mix `<meta>` tags with `<link>`
-tags or any `<script>` tags.
+Group tags together. Don't mix `<meta>` tags with `<link>`.
 
-Script tags should be kept to a minimum in favor of the bottom of the `<body>`.
+Generally, tags should be listed in the order: meta, link, script.
+
+Script tags should be kept to a minimum to speed page loading.
 
 ## Body
 
-Place `<script>` tags before the end `</body>` tag.
+Place `<script>` tags before the `</body>` tag.
 
 ## Tags
 
@@ -39,22 +29,15 @@ Limit the use of `<img>` tags where possible and substitute for background image
 
 Instead of using `<br>` more than once, wrap text in `<p>` tags.
 
+Don't repeat spacing tags or characters (`<br>`, `&nbsp;`, `<p></p>`). Prefer
+to use CSS spacing instead.
+
 List items should always be wrapped in `<ul>`, `<ol>`, or `<dl>`.
 
 As a general rule separate tags by a newline. Opening and Closing tags should wrap
 to their own lines unless they contain no or little content.
 
-Do not use end slashes for self-closing tags (`<img src=”myimg.png” alt>`).
-
-Good:
-
-    <img src="myimg.png" alt />
-    <br />
-
-Bad:
-
-    <img src="miimg.png" alt>
-    <br>
+Do not use end slashes for self-closing tags (`<img alt>`, not `<img alt/>`).
 
 ## Attributes
 
@@ -65,7 +48,19 @@ Prefer a `title` attribute for anchor tags.
 Do not use quotes for empty attributes. Just specify the attribute without the
 `=""`.
 
-Do not use event attributes.
+Do not use JS event attributes. Rely on Angular (`ng-click="..."`).
+
+When a tag contains many attributes wrap at the end of the line to a single 
+attribute per line, indent two steps in, and place the closing `>` after the last 
+attribute:
+
+```html
+<section id="section-id" class="one two three four"
+        ng-click="doSomething()"
+        validate
+        required="true">
+    <div class="inner-div">
+```
 
 ## Structuring
 
@@ -78,9 +73,9 @@ of modular layout.
 
 ## Scripts
 
-If at all possible, keep scripts external to HTML markup.
+Prefer to place JS code in an external file.
 
 ## Comments
 
-Avoid them in favor of template comments.
+Comments in HTML should be avoided.
 
