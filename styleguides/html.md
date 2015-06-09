@@ -79,3 +79,6 @@ Prefer to place JS code in an external file.
 
 Comments in HTML should be avoided.
 
+## Includes
+
+If at all possible avoid using `ng-include` in favor of directives with templates.
