@@ -1,6 +1,6 @@
 # LESS/CSS Style Guide
 
-In this styleguide CSS will actually be LESS syntax.
+In this style guide CSS will actually be LESS syntax.
 
 ## Quick Points
 
@@ -13,8 +13,9 @@ In this styleguide CSS will actually be LESS syntax.
 Every file should include a header like so:
 
 ```less
-# Module Name
-### Description of what it does.
+// # Component Name
+// ### Description of what it does.
+// Any other instructions or explanations needed.
 ```
 
 Comments generate docs in markdown fashion.
@@ -24,11 +25,16 @@ Comments generate docs in markdown fashion.
 Use a single space before `{` in rule blocks and place it on the same line as
 the last selector.
 
+Be sure that ending brackets `}` line up with the beginning of the selector 
+for that block.
+
 Prefer to keep selectors on the same line. Wrap if it's hard to read.
 
 Pad modifiers like `+`, `>`, and `~` with a single space.
 
 ## Properties & Values
+
+EAch property gets its own line.
 
 Use a single space after `:` in declarations. Not before.
 
@@ -75,7 +81,7 @@ Use nesting sparingly! It comes with a cost. A common mistake is to think of CSS
 nesting like the DOM. Not everything should be nested. Nesting merely saves you
 the hassle of having to retype selectors multiple times for *modifying* situations.
 
-Don't nest any deeper than **3 levels deep**.
+Don't nest more than **3 levels deep**.
 
 Never nest an id `#` selector.
 
@@ -113,8 +119,8 @@ Use CSS properties wherever possible over images.
 Image filenames are specially named with each part separated by a hyphen. A name
 should contain the following:
 
-1. UI Module
-1. Function of Module
+1. UI Component
+1. Function of Component
 1. Interative State *(optional)*
 
 Examples:
@@ -129,3 +135,14 @@ Examples:
 Use shorthand for things that are easily recognizable like `bg`, `bd`, and `btn`.
 
 Prefer to use SVG over bitmap.
+
+## Animations
+
+Prefer to use CSS animations over JS.
+
+Animation classes should stand alone (not nested) and be defined on the root
+level of the file.
+
+If an animation pertains to a specific component place it as close to the component's definition as possible.
+
+Name animations as specifically as possible to avoid name collisions.
