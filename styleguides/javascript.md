@@ -36,32 +36,26 @@ Place them on the same line as the thing that necessitates them.
 An `else`, `elseif`, `catch` statement belongs on the same line as
 the preceeding `}`.
 
-Bad:
-
 ```js
+// Bad
 function()
 {
-```
+}
 
-Good:
-
-```js
+// Good
 function () {
+}
 ```
 
 Wrap blocks to the next line if they are complex (more than 1 line). And always use curly braces only if wrapping to a new line.
 
-Bad:
-
 ```js
+// Bad
 if (foo) { bar() }
 if (foo)
   bar()
-```
 
-Good:
-
-```js
+// Good
 if (foo) bar()
 if (foo) {
   bar()
@@ -113,6 +107,8 @@ function myFunc () {}
 let fn = function() {}
 
 let generator = function* () {}
+
+myArr.map((n) => n * 2)
 ```
 
 Segment your code into logical groups with single-empty lines. Be generous with
@@ -181,16 +177,19 @@ especially includes the object `.` operator.)
 
 ## Flow Control
 
-Be sure to not write blocking, synchronous code!
+Be sure to not write blocking runtime code!
 
-When writing asynchronously prefer to use Promises. Promisify all methods (like
-node api methods) that use nodebacks.
+When writing asynchronous code use Promises over callbacks.
+[Promisify](https://goo.gl/pgW3KR) all methods (like node api methods) that 
+use nodebacks (node-flavored callbacks).
 
 Do not use deferred Promises. Use Promise construction instead.
 
 If generators are supported, prefer to use wrapped generators 
 ([coroutines](https://goo.gl/IZeWPG)) with 
 promised flows to minimize on block indenting and explicit uses of `.then()`.
+
+Mind these [promise anti-patterns](https://github.com/petkaantonov/bluebird/wiki/Promise-anti-patterns).
 
 Events should be used for broadcasting data from one component to (potentially)
 many. They shouldn't be over-used for abstracting method calls.
@@ -199,9 +198,16 @@ Streams should be used for keeping buffered data in memory to a minimum.
 
 ## Comments & Documentation
 
-Comment often for inline documentation. Place a Header 1 (in Markup) at the top of every
-file with the module/class name and a Header 3 with a brief description of what
-it does.
+Comments are turned into docs in markdown flavor.
+
+Each file should contain the header:
+
+```js
+// # File Title
+// ### A Brief Description of What the File Does
+// Any other things that need saying...
+'use strict'
+```
 
 ## CommonJS
 
@@ -214,3 +220,15 @@ it easy to see at first glance what a file is requiring and exporting.
 ## Danger Zones
 
 Don't use `with` or `eval`, ever.
+
+Do not use `try {} catch() {}` inline in functions. It prevents JS engines (V8 in 
+particular) from optimizing the entire function. Either wrap the operation in a 
+Promise, in something like [Promise.try](https://goo.gl/eNsBnA), or use a special 
+utility function that does nothing but try-catches your code.
+
+As far as you can, do not use the `delete` operator on objects properties. This operation is incredibly slow (100x slower than assignment)! It is much better to 
+delete via voiding: `obj.myProp = undefined`.
+
+Use of the `arguments` object could cause a function to not be optimized. For instance, mentioning `arguments` in the function body while reassigning a
+defined parameter, passing the `arguments` object or leaking it will cause the optimizer to bail out. You can use it but do so with caution. If es6 rest parameters
+are allowed (`function(...args) {}`) it's best to use them instead.
