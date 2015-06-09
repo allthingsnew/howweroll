@@ -1,21 +1,20 @@
-# Git Style Guide
+# Git
 
-Following are our Git conventions that should be followed. We like clean, cohesive,
-and consistent history.
+Toward clean, cohesive, and consistent history.
 
 ## Commits
 
-We favor commit verbosity and context over number of commits. Repository history should make sense by use of commit messages coupled with diffs rather than a breadcrumb of many smaller commit changes.
+Favor commit verbosity and context over number of commits. Repository history should make sense by use of commit messages coupled with diffs rather than a breadcrumb of many smaller commit changes.
 
-### Squash Commits
+### Squashing Commits
 
 **Before pushing your changes** it's good practice to [squash extra commits](https://help.github.com/articles/interactive-rebase) into as small of pieces as possible. Be careful that picked commits do not swallow squashed history.
 
-### Commit Messaging
+### Commit Messages
 
-Messages should contain a Subject, Description, and any references to Issues or Tickets the commit might address. Not all commits need this much information, however, so it might be good practice to squash these into a more inclusive commit message.
+Message Subject should be short and concise with no punctuation.
 
-A good commit message includes the following:
+If more details are needed include a description.
 
 * Subject Line: present tense summary less than 50 characters
 * More Information
@@ -32,33 +31,11 @@ Here's a good sample commit message:
 
 (Notice the use of #29 in the message. Github sees this and will actually close issue #29 for you and reference the issue via link.)
 
-## Git Flow
+## Branches
 
-The branch model known as GitFlow keeps everything working correctly by separating out different development timelines into topic branches. Install GitFlow useing Homebrew:
+Own your own branches. It's best not to work directly on master.
 
-	# We use the AVH edition because its maintainer is active.
-    brew install git-flow-avh
+Use [git-up](https://github.com/aanand/git-up) (rebase) to pull down the latest
+changes.
 
-Work on new features only in their respective branches:
-
-    git flow feature start foo
-
-    # make some changes relevent to only this feature
-    git add .
-    git commit
-
-Incorporate upstream changes regularly.
-
-	git checkout master
-    git pull --rebase
-    git checkout -
-    git flow feature rebase
-
-When finished with your feature and tested, make sure you're up to date with upstream changes
-on master, squash commits into as small pieces as possible, and close out the feature.
-
-	# On feature foo branch
-    git rebase -i
-    git flow feature finish
-    # Then push your changes
-    git push
+Delete or close out branches when they have been merged into master.
